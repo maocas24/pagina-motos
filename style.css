@@ -1,0 +1,235 @@
+*{
+    margin: 0;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.pagina{
+    position: absolute;
+    background-color: #9F1212;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+:root{
+    --tamaño-texto: 30px;
+    --tamaño-titulo: 60px;
+}
+
+body{
+    display: grid;
+    width: 100%;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr;
+}
+
+.contenedor-info-principal{
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: #9F1212;
+    width: 100%;
+    height: 100%;
+}
+
+.enlaces{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 140px;
+    animation: bajar 3s 2.8s;
+}
+
+.enlaces a{
+    color: #086970;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.info{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    padding: 0px 200px 0px 200px;
+    margin-top: 100px;
+}
+
+.parrafo{
+    font-size: 20px;
+}
+
+.info h2{
+    font-size: 40px;
+}
+
+p{
+    color: #000000;
+}
+
+h2{
+    color: #000000;
+}
+
+@keyframes bajar{
+    0%{
+        position: relative;
+        bottom: -100px;
+    }
+    100%{
+        position: relative;
+        bottom: 0px;
+    }
+}
+
+.logo{
+    width: 124px;
+    height: 100px;
+}
+
+p{
+    font-size: var(--tamaño-texto);
+}
+
+.titulo{
+    font-size: var(--tamaño-titulo);
+}
+
+.contenedor-targetas{
+    width: 100%;
+    height: 320px;
+    display: flex;
+    background-color: #086970;
+    flex-direction: row;
+    align-items: center;
+    border-top-right-radius: 50px;
+    gap: 20px;
+    background-color: var(--color-fondo);
+    animation: subir 3s;
+    animation-delay: 2.8s;
+}
+
+@keyframes subir{
+    0%{
+        position: absolute;
+        bottom: -320px;
+    }
+    100%{
+        position: absolute;
+        bottom: 0px;
+    }
+}
+
+.contenedor-imagen{
+    display: flex;
+    width: 235;
+    height: 188;
+    background-color:#086970;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.contenedor-imagen input{
+    background-color: #086970;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+}
+
+.contenedor-info-secundario{
+    width: 100%;
+    display: grid;
+    grid-template-columns:  1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "blanco imagen imagen imagen texto";
+    animation: derecha-izquierda 3s 2.8 forwards;
+}
+
+@keyframes derecha-izquierda{
+    0%{
+        position: relative;
+        right: -300px;
+    }
+    100%{
+        position: relative;
+        right: 0px;
+    }
+
+}
+
+
+.yout{
+    width: 100%;
+    grid-area: imagen;
+    align-self: center;
+}
+
+
+.info-texto{
+    margin-bottom: 20px;
+    text-align: center;
+    
+}
+
+
+.pagina-cargando {
+    position: absolute;
+    gap: 20px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #9F1212;
+    animation: desaparecer 3s forwards;
+    
+}
+
+@keyframes desaparecer{
+    0%{
+        visibility: visible;
+    }
+    90%, 100%{
+        visibility: hidden;
+    }
+}
+
+.puntos {
+    width: 50px;
+    height: 50px;
+    background-color: #000000;
+    border-radius: 50px;
+    animation-name: palpitar;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+
+.puntos:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.puntos:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.puntos:nth-child(3) {
+    animation-delay: 1s;
+}
+
+@keyframes palpitar {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.3);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
